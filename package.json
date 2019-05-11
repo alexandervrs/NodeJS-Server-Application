@@ -1,0 +1,12 @@
+{
+	"name": "APP_NAME",
+	"version": "1.0.0",
+	"description": "APP_DESCRIPTION",
+	"main": "server.js",
+	"author": "AUTHOR_NAME",
+	"dependencies": {
+		"express": "^4.16.4",
+		"mysql2": "^1.6.5",
+		"socket.io": "^2.2.0"
+	}
+}

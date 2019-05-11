@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Client</title>
+		<style>
+
+body {
+	background: #242424;
+	color: #fafafa;
+	font: 12px Arial, sans-serif;
+	cursor: default;
+}
+		
+		</style>
+	</head>
+	<body>
+		<p id="scores"></p>
+		<p id="server-time"></p>
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+
+		var socket = io();
+
+		socket.on("time", function(timeString) {
+			document.getElementById("server-time").innerHTML = "<b>Server time</b> " + timeString;
+		});
+
+		socket.on("ShowUserData", function(data) {
+			document.getElementById("scores").innerHTML = "<b>Scores</b> <br/>" + data;
+		});
+
+		function updateUserData() {
+
+			var user_name = document.getElementById("name").value;
+			var score     = document.getElementById("score").value;
+			
+			console.log("Update User Data, sending: name="+user_name+", score="+score);
+			
+			var socket = io.connect("http://localhost:3000");
+			socket.emit("UpdateUserData", { "name": user_name, "score": score });
+			
+		}
+		</script>
+		<p>Submit Data</p>
+		<input type="text" value="Alex" id="name" /> <input type="text" value="100" id="score" /> <button onclick="updateUserData()">Update User Data</button>
+	</body>
+</html>
