@@ -35,6 +35,7 @@ this will open up the default web browser with a link, click on Login
 In the Heroku App dashboard now go to Resources and turn on "worker node server.js"
 
 
+
 **To Update and re-Deploy a Server Application hosted on Heroku**
 
 From within your Server Application folder, run cmd.exe and then:
