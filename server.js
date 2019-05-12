@@ -46,7 +46,7 @@ io.on("connection", (socket) => {
 		password: dbPassword,
 		database: dbName,
 		waitForConnections: true,
-		connectionLimit: 10,
+		connectionLimit: 151,
 		queueLimit: 0
 	});
 	
@@ -91,7 +91,7 @@ setInterval(() => {
 		password: dbPassword,
 		database: dbName,
 		waitForConnections: true,
-		connectionLimit: 10,
+		connectionLimit: 151,
 		queueLimit: 0
 	});
 	
